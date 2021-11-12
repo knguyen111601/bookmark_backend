@@ -2,7 +2,7 @@
 // Import our dependencies 
 ////////////////////////////////////////////////////////////////////////
 // Import the existing connected mongoose object from connection.js
-const mongoose = require("./connection");
+const mongoose = require("../db/connection");
 
 ////////////////////////////////////////////////////////////////////////
 // Create our Bookmark Model
