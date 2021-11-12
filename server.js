@@ -9,11 +9,16 @@ const cors = require("cors")
 const app = express()
 const {PORT = 7777} = process.env
 
+// Import Router
+const BookmarkRouter = require("./controllers/bookmark")
+
 //////////////////////////////////////////////////////////
 // Routes
 //////////////////////////////////////////////////////////
-app.get("/", (req, res)=>{
-    res.send("hello world")
-})
+app.use("/", BookmarkRouter)
 
+
+//////////////////////////////////////////////////////////
+// Server Listener
+//////////////////////////////////////////////////////////
 app.listen(PORT, ()=>{console.log(`Now listening on PORT ${PORT}`)})
