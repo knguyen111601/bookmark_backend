@@ -22,6 +22,15 @@ router.get("/bookmarks", async (req,res)=>{
     }
 })
 
+// Create Route 
+router.post("/bookmarks", async (req, res) =>{
+    try {
+        res.json(await Bookmark.create(req.body))
+    } catch (error) {
+        res.status(400).json(error)
+    }
+})
+
 ///////////////////////////////////////////////////////
 // Export Router
 ///////////////////////////////////////////////////////
