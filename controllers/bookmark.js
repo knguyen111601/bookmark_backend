@@ -13,6 +13,15 @@ const router = express.Router();
 // Routes
 ///////////////////////////////////////////////////////
 
+// Index route - get request
+router.get("/bookmarks", async (req,res)=>{
+    try {
+        res.json(await Bookmark.find({}))
+    } catch (error) {
+        res.status(400).json(error)
+    }
+})
+
 ///////////////////////////////////////////////////////
 // Export Router
 ///////////////////////////////////////////////////////
